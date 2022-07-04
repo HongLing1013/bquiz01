@@ -210,6 +210,7 @@ function dd($array){
 }
 
 $Bot=new DB('bottom');
+$Title=new DB('title');
 
 // 快速檢查
 // $Bottom=new DB('bottom');

@@ -1,6 +1,5 @@
 <?php
 include_once "../base.php";
-$text=$_POST['text'];
 
 // 檢查是否有圖片
 if(isset($_FILES['img']['tmp_name'])){// 移動圖片到img
@@ -13,8 +12,10 @@ if(isset($_FILES['img']['tmp_name'])){// 移動圖片到img
    如果這個要拿去當作品
    需要加回判斷式 */
 
-$data=['img'=>$img,'text'=>$text,'sh'=>0];//要寫入的資料格式
-$Title->save($data);
+$id=$_POST['id'];//取得id
+$row=$Title->find($id);//取得要更改資料的內容
+$row['img']=$img;//將圖片改成新的img
+$Title->save($row);
 
 to("../back.php?do=title");
 
