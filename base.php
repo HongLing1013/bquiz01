@@ -146,6 +146,49 @@ class DB
     return $this->pdo->exec($sql);/* 不須回傳所以使用exec
                                      return會回傳成功或失敗 */
   }
+
+  //數學函式
+  public function math($math,$col,...$arg){
+    $sql="select $math($col) from $this->table ";/* 這段的$math($col)是寫死的
+                                                    所以只會有一個單一的數值
+                                                    不會有多筆資料 */
+
+    // 判斷第一個參數是否存在
+    if(isset($arg[0])){ /* 如果存在 繼續下一輪判斷 
+                           不存在 select全部 */
+
+      // 判斷是陣列還是字串
+      if(is_array($arg[0])){/* 如果是陣列 串成WHERE條件句 */
+
+        // 印出陣列內容
+        foreach($arg[0] as $key => $value){
+          $tmp[]="`$key`='$value'";/* 建立一個暫時的陣列
+                                      以欄位=value的方式排列儲存
+                                      方便接下來串成WHERE條件句 */
+        }
+
+        // 串成條件句
+        $sql .= " WHERE " . join(" AND ", $tmp);
+
+      }else{ /* 如果不是陣列 即是字串
+                就把字串串成句子 */
+
+        // 串成句子
+        $sql .= $arg[0];
+      }
+    }
+
+    // 判斷第二個參數是否存在
+    if(isset($arg[1])){
+      $sql .= $arg[1];
+    }
+    // echo $sql; //測試用的echo
+
+    // 回傳
+    return $this->pdo->query($sql)->fetchColumn();
+  }
+
+  
 }
 
 // 快速檢查
