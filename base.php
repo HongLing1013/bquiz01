@@ -188,7 +188,25 @@ class DB
     return $this->pdo->query($sql)->fetchColumn();
   }
 
-  
+  // 萬用函式
+  public function q($sql){
+    // echo $sql;
+    return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    /* 回傳二維陣列 */
+  }
+
+}
+
+// 簡化導向function
+function to($url){
+  header("location:".$url);
+};
+
+// 偵錯function
+function dd($array){
+  echo "<pre>";
+  print_r($array);
+  echo "</pre>";
 }
 
 // 快速檢查
