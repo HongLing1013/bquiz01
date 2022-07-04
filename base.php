@@ -209,7 +209,9 @@ function dd($array){
   echo "</pre>";
 }
 
+$Bot=new DB('bottom');
+
 // 快速檢查
-$Bottom=new DB('bottom');
+// $Bottom=new DB('bottom');
 // print_r($Bottom->all(" where `id`='1'",' limit 1'));
 ?>
