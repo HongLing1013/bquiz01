@@ -23,6 +23,7 @@
 		</div>
 	</div>
 	<div id="main">
+	<?php include "header.php"; ?>
 		<div id="ms">
 			<div id="lf" style="float:left;">
 				<div id="menuput" class="dbor">
