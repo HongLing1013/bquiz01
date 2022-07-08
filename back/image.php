@@ -5,21 +5,17 @@
             <tbody>
                 <tr class="yel">
                     <td width="45%"><?=$Str->imgHead;?></td>
-                    <td width="23%"><?=$Str->textHead;?></td>
                     <td width="7%">顯示</td>
                     <td width="7%">刪除</td>
                     <td></td>
                 </tr>
                 <?php
-                    $rows=$Title->all();//撈出所有資料
+                    $rows=$Image->all();//撈出所有資料
                     foreach($rows as $row){
                 ?>
                 <tr>
                     <td width="45%">
                         <img src="./img/<?=$row['img'];?>" style="width:300px;height:30px;">
-                    </td>
-                    <td width="23%">
-                        <input type="text" name="text" value="<?=$row['text'];?>">
                     </td>
                     <td width="7%">
                         <input type="radio" name="sh" value="<?=$row['id'];?>">
@@ -29,7 +25,7 @@
                     </td>
                     <td>
                         <input type="button" value="<?=$Str->updateImg;?>"
-                        onclick="op('#cover','#cvr','./modal/update_title.php?id=<?=$row['id'];?>')">
+                        onclick="op('#cover','#cvr','./modal/update_<?=$Str->table;?>.php?id=<?=$row['id'];?>')">
                     </td>
                 </tr>
                 <?php

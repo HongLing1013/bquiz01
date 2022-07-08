@@ -9,10 +9,6 @@ include_once "../base.php";?>
       <td><?=$Str->addModalcol[0];?>：</td>
       <td><input type="file" name="img"></td>
     </tr>
-    <tr>
-      <td><?=$Str->addModalcol[1];?>：</td>
-      <td><input type="text" name="text"></td>
-    </tr>
   </table>
   <div>
     <input type="submit" value="新增">
