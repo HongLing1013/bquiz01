@@ -23,10 +23,6 @@
 		</div>
 	</div>
 	<div id="main">
-		<a title="" href="./index.php">
-			<div class="ti" style="background:url(&#39;use/&#39;); background-size:cover;"></div>
-			<!--標題-->
-		</a>
 		<div id="ms">
 			<div id="lf" style="float:left;">
 				<div id="menuput" class="dbor">

@@ -23,7 +23,8 @@
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </td>
                     <td width="7%">
-                        <input type="radio" name="sh" value="<?=$row['id'];?>">
+                        <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                        <!-- 如果$row['sh']==1 就顯示 不然就為空 -->
                     </td>
                     <td width="7%">
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">

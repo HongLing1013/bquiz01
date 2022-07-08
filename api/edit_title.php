@@ -14,7 +14,9 @@ if(!empty($_POST['id'])){/* 判定有沒有id送過來
     }else{
       $row=$Title->find($id);/* 先撈資料 */
       $row['text']=$_POST['text'][$idx];/* 更新文字欄位 */
-
+      $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;/* POST的sh如果有勾選 (存在)
+                                                                   並且與id相符
+                                                                   就將它設為1 否則為0 */
       $Title->save($row);/* 更新後儲存 */
     }
   }
