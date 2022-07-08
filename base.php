@@ -92,7 +92,7 @@ class DB
 
   //刪除的 function
   public function del($id){/* 只取一筆 */
-    $sql="DELETE * from $this->table ";
+    $sql="DELETE from $this->table ";
 
       // 判斷id是陣列還是字串
       if(is_array($id)){/* 如果是陣列 串成WHERE條件句 */
