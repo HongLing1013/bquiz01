@@ -211,6 +211,7 @@ function dd($array){
 
 $Bot=new DB('bottom');
 $Title=new DB('title');
+$Ad=new DB('ad');
 
 // 快速檢查
 // $Bottom=new DB('bottom');
