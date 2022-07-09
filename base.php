@@ -309,7 +309,6 @@ $Menu=new DB('menu');
 
 $Str=new Str($do);
 
-// 快速檢查
-// $Bottom=new DB('bottom');
-// print_r($Bottom->all(" where `id`='1'",' limit 1'));
+
+
 ?>
