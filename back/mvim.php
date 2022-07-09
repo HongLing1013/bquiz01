@@ -4,10 +4,9 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="45%"><?=$Str->tdHead[0];?></td>
-                    <td width="23%"><?=$Str->tdHead[1];?></td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
+                    <td width="70%"><?=$Str->tdHead[0];?></td>
+                    <td width="10%">顯示</td>
+                    <td width="10%">刪除</td>
                     <td></td>
                 </tr>
                 <?php
@@ -16,13 +15,10 @@
                 ?>
                 <tr>
                     <td>
-                        <img src="./img/<?=$row['img'];?>" style="width:300px;height:30px;">
+                        <img src="./img/<?=$row['img'];?>" style="width:120px;height:80px;">
                     </td>
                     <td>
-                        <input type="text" name="text[]" value="<?=$row['text'];?>">
-                    </td>
-                    <td>
-                        <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                        <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                         <!-- 如果$row['sh']==1 就顯示 不然就為空 -->
                     </td>
                     <td>
