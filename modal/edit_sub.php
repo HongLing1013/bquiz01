@@ -12,7 +12,7 @@ $subs=$Menu->all(['parent'=>$_GET['id']]);//拉出來的結果為對應id的複�
 <h3 class="cent">編輯次選單</h3>
 <hr>
 <form action="./api/edit_sub.php" method="post">
-<table style="width: 70%; margin: 0 auto">
+<table style="width: 70%; margin: 0 auto" id="submenu">
   <tr>
     <td>次選單名稱</td>
     <td>次選單連結網址</td>
@@ -40,6 +40,11 @@ $subs=$Menu->all(['parent'=>$_GET['id']]);//拉出來的結果為對應id的複�
 
 <script>
   function more(){
-    資料庫程式設計 7/11 1:00:00
+    let row=` <tr>
+    <td><input type="text" name="text2[]" value="<?=$sub['text'];?>"></td>
+    <td><input type="text" name="href2[]" value="<?=$sub['href'];?>"></td>
+    <td></td>
+    </tr>`;
+    $("#submenu").append(row);
   }
 </script>
