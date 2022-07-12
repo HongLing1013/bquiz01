@@ -12,7 +12,8 @@
                     <td></td>
                 </tr>
                 <?php
-                    $rows=$DB->all();//撈出所有資料
+                    $rows=$DB->all(['parent'=>0]);/* 撈出主選單
+                                                     避免顯示次選單 */
                     foreach($rows as $row){
                 ?>
                 <tr>
