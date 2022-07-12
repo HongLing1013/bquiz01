@@ -11,7 +11,7 @@ $subs=$Menu->all(['parent'=>$_GET['id']]);//拉出來的結果為對應id的複�
 
 <h3 class="cent">編輯次選單</h3>
 <hr>
-<form action="./api/edit_sub.php" method="post"></form>
+<form action="./api/edit_sub.php" method="post">
 <table style="width: 70%; margin: 0 auto">
   <tr>
     <td>次選單名稱</td>
@@ -26,7 +26,10 @@ $subs=$Menu->all(['parent'=>$_GET['id']]);//拉出來的結果為對應id的複�
     <td><input type="text" name="href[]" value="<?=$sub['href'];?>"></td>
     <td><input type="checkbox" name="del[]" value="<?=$sub['id'];?>"></td>
   </tr>
+      <input type="hidden" name="id[]" value="<?=$sub['id'];?>">
   <?php
   }
   ?>
 </table>
+
+</form>
