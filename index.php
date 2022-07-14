@@ -30,6 +30,35 @@ include "base.php";
 				<div id="menuput" class="dbor">
 					<!--主選單放此-->
 					<span class="t botli">主選單區</span>
+					<?php
+						$mms=$Menu->all(['parent'=>0,"sh"=>1]);//拉出主選單跟有顯示的資料
+						foreach($mms as $mm){
+							echo "<div class='mainmu'>";
+							echo "<a href='{$mm['href']}'>";
+							echo $mm['text'];
+							echo "</a>";
+
+							// 撈出次選單
+							$subs=$Menu->all(['parent'=>$mm['id']]);
+							echo "<div class='mw'>";
+							foreach($subs as $sub){
+								echo "<div class='mainmu2'>";
+								echo "<a href='{$sub['href']}'>";
+								echo $sub['text'];
+								echo "</a>";
+								echo "</div>";
+							}
+
+							echo "</div>";
+							echo "</div>";
+						}
+					
+					
+					
+					?>
+
+
+
 				</div>
 				<div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
 					<span class="t">進站總人數 :
@@ -57,17 +86,17 @@ include "base.php";
 					<div class="cent" onclick="pp(1)">
 						<img src="./icon/up.jpg" alt="">
 					</div>
-					
+
 					<!-- 中間的圖片內容 -->
 					<?php
-						$imgs=$Image->all(['sh'=>1]);//撈出設為顯示的image
-						foreach($imgs as $idx => $img){
+					$imgs = $Image->all(['sh' => 1]); //撈出設為顯示的image
+					foreach ($imgs as $idx => $img) {
 					?>
-					<div id="ssaa<?=$idx;?>" class="cent im">
-						<img src="./img/<?=$img['img'];?>">
-					</div>
+						<div id="ssaa<?= $idx; ?>" class="cent im">
+							<img src="./img/<?= $img['img']; ?>">
+						</div>
 					<?php
-						}
+					}
 					?>
 
 
@@ -79,7 +108,7 @@ include "base.php";
 
 					<script>
 						var nowpage = 0,
-						num = <?=$Image->math('count','id',['sh'=>1]);?>;//算出有幾個要顯示的圖
+							num = <?= $Image->math('count', 'id', ['sh' => 1]); ?>; //算出有幾個要顯示的圖
 
 						function pp(x) {
 							var s, t;
@@ -95,7 +124,7 @@ include "base.php";
 								$("#ssaa" + t).show()
 							}
 						}
-						pp(1)//先跑完一次後執行pp(1) 顯示前三張 其他隱藏
+						pp(1) //先跑完一次後執行pp(1) 顯示前三張 其他隱藏
 					</script>
 				</div>
 			</div>
