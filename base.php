@@ -12,6 +12,7 @@ class DB
   public $table;
   protected $pdo;
 
+  // 讓下方物件導向的東西可以new出來
   public function __construct($table)
   {
     $this->table=$table; /* 上方protected 的 $table就是this
