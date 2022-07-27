@@ -202,6 +202,7 @@ class Str{
   public $header;
   public $tdhead;
   public $updateImg;
+  public $uploadModal;
   public $addBtn;
   public $addModalHeader;
   public $addModalcol;
