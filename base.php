@@ -202,13 +202,6 @@ class Str{
   public $header;
   public $tdhead;
   public $updateImg;
-  public $uploadModal;
-  public $acc;
-  public $pw;
-  public $mainText;
-  public $mainHref;
-  public $subText;
-  public $subHref;
   public $addBtn;
   public $addModalHeader;
   public $addModalcol;
